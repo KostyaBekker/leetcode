@@ -61,6 +61,53 @@ function longestCommonPrefix(strs) {
   return prefix;
 };
 
-console.log(longestCommonPrefix(["flofmnmn", "flofmn", "flofghtmn"]));
+// console.log(longestCommonPrefix(["flofmnmn", "flofmn", "flofghtmn"]));
 
 /////////////////////////////////////////////////////////
+
+//Merge Sorted Array/////
+
+function mergeSortedArray(nums1, m, nums2, n) {
+  if (!nums2.length) {
+    return;
+  }
+
+  let nums1MergeInd = m + n - 1;
+  let nums1Ind = m - 1;
+  let nums2Ind = n - 1;
+
+  while (nums2Ind > -1) {
+    if (nums1[nums1Ind] !== undefined && nums1[nums1Ind] > nums2[nums2Ind]) {
+      nums1[nums1MergeInd] = nums1[nums1Ind];
+      nums1Ind--;
+    } else {
+      nums1[nums1MergeInd] = nums2[nums2Ind];
+      nums2Ind--;
+    }
+    nums1MergeInd--;
+    
+  }
+  
+  
+}
+
+// mergeSortedArray([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
+
+////////////////////////////////////////////////////////
+
+//missingNumber//////////////////////////////////////////
+function missingNumber(nums, target) {
+  let obj={};
+  for (let i=0; i< nums.length; i++) {
+    let diff = target - nums[i];
+    if (diff in obj) {
+      return [obj[diff],i];
+    } else {
+      obj[nums[i]] = i;
+    }
+  }
+}
+
+// console.log(missingNumber([2,7,11,15], 18))
+
+////////////////////////////////////////////////////////
