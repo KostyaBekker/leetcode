@@ -1,4 +1,4 @@
-console.log('start test');
+console.log('start LEETCODE');
 
 
 //Roman to Integer////////////////////////////////////
@@ -85,7 +85,10 @@ function mergeSortedArray(nums1, m, nums2, n) {
       nums2Ind--;
     }
     nums1MergeInd--;
-    
+  }
+
+  if (nums2Ind === -1) {
+    console.log(nums1);
   }
   
   
@@ -111,3 +114,30 @@ function missingNumber(nums, target) {
 // console.log(missingNumber([2,7,11,15], 18))
 
 ////////////////////////////////////////////////////////
+
+
+//Valid Parentheses////////////////////////////////////
+
+function validParentheses(value) {
+  let brac = {
+    '(': ')',
+    '{': '}',
+    '[': ']'
+  }
+  let stack = []
+  
+  for (let i of value) {
+    if (brac[i]) {
+      stack.push(brac[i])
+    } else {
+      if (stack.pop() !== i) {
+        console.log(false);
+        return false
+      }
+    }
+  }
+  // return !stack.length
+  console.log(!stack.length);
+}
+
+// validParentheses("({})]");
