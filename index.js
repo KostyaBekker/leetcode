@@ -137,7 +137,36 @@ function validParentheses(value) {
     }
   }
   // return !stack.length
-  console.log(!stack.length);
+  // console.log(!stack.length);
 }
 
 // validParentheses("({})]");
+
+////////////////////////////////////////////////////////
+
+
+//searchInsert/////////////////////////////////////////
+function searchInsert(arr, value) {
+  // let index = arr.indexOf(value);
+  // if (index === -1) {
+  //   arr.push(value);
+  //   arr.sort((a, b) => a - b);
+  //   index = arr.indexOf(value);
+  // }
+  // console.log(index);
+
+  //solutin2
+  let p = 0;
+  while( p < arr.length ) {
+      if( value <= arr[p] ) {
+        return console.log(p);
+      }
+      else if( value > arr[p] ) {
+          p++;
+      }
+  }
+  return console.log(p);
+}
+
+searchInsert([1, 3, 5, 6], 5);
+////////////////////////////////////////////////////////
