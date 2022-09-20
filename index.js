@@ -168,5 +168,36 @@ function searchInsert(arr, value) {
   return console.log(p);
 }
 
-searchInsert([1, 3, 5, 6], 5);
+// searchInsert([1, 3, 5, 6], 5);
+////////////////////////////////////////////////////////
+
+
+//removeElement//////////////////////////////////////////
+var removeElement = function(nums, val) {
+    let firstDiffNum = 0;
+    
+    for (let i = 0; i < nums.length; i++){
+        if (nums[i] === val){
+            continue;
+        }
+        
+        nums[firstDiffNum] = nums[i];
+        firstDiffNum += 1;
+        
+    }
+    
+    return console.log(firstDiffNum);
+};
+// removeElement([2,2,5,6], 2);
+////////////////////////////////////////////////////////
+
+//lengthOfLastWord//////////////////////////////////////
+var lengthOfLastWord = function(s) {
+  let len;
+  len = s.trim().length - s.trim().lastIndexOf(" ") - 1;
+  console.log(len)
+  //or
+  console.log(s.trim().split(' ').pop().length)
+};
+// lengthOfLastWord("luffy is still joyboy");
 ////////////////////////////////////////////////////////
