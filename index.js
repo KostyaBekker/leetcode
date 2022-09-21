@@ -201,3 +201,30 @@ var lengthOfLastWord = function(s) {
 };
 // lengthOfLastWord("luffy is still joyboy");
 ////////////////////////////////////////////////////////
+
+///plusOne/////////////////////////////////////////////
+var plusOne = function(digits) {
+  // let newArr = ((Number(digits.join('')) + 1).toString()).split('');
+  // console.log(newArr);
+
+  let current = digits.length-1;
+    
+    function increment(digits,current){
+        if(digits[current] === 9 && current > 0){
+            digits[current] = 0;
+            current--;
+            increment(digits,current);
+        } else if(digits[current] === 9){
+            digits[current] = 0;
+            digits.unshift(1);
+        } else{
+            digits[current]++
+        }
+        
+    }
+    increment(digits,current);
+    return console.log(digits);
+};
+
+// plusOne([6,1,4,5]);
+////////////////////////////////////////////////////////
