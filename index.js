@@ -228,3 +228,31 @@ var plusOne = function(digits) {
 
 // plusOne([6,1,4,5]);
 ////////////////////////////////////////////////////////
+
+///addBinary/////////////////////////////////////////////
+var addBinary = function(a, b) {
+    
+  a = a.split('').reverse().join('');
+  b = b.split('').reverse().join('');
+  let res = '';
+  let carry = 0;
+  
+  for(let i=0; i<Math.max(a.length, b.length); i++) {
+      const digit_a = i < a.length ? a.charCodeAt(i) - '0'.charCodeAt(0) : 0;
+      const digit_b = i < b.length ? b.charCodeAt(i) - '0'.charCodeAt(0) : 0;
+      
+      const total = digit_a + digit_b + carry;
+      const str = String(total % 2);
+      carry = Math.floor(total / 2);
+      res = str + res;
+  }
+  
+  if(carry)
+      res = '1' + res;
+  
+  return console.log(res);;
+  
+};
+
+addBinary('11', '1');
+////////////////////////////////////////////////////////
