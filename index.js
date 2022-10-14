@@ -250,9 +250,27 @@ var addBinary = function(a, b) {
   if(carry)
       res = '1' + res;
   
-  return console.log(res);;
+  return console.log(res);
   
 };
 
-addBinary('11', '1');
+// addBinary('11', '1');
+////////////////////////////////////////////////////////
+
+///climbStairs//////////////////////////////////////////
+var climbStairs = function(n) {
+    
+  const index = n - 1;
+    let dp = [1, 2];
+    if (index > 1) {
+        for (let i=2; i<=n; i++) {
+            dp[i] = dp[i - 2] + dp[i - 1];
+        }
+    }
+  
+  return console.log(dp[index]);
+  
+};
+
+climbStairs(5);
 ////////////////////////////////////////////////////////
